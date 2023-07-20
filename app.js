@@ -124,6 +124,17 @@ app.post(
   })
 );
 
+app.delete(
+  "/campgrounds/:id/reviews/:reviewId",
+  catchAsync(async (req, res) => {
+    const { id, reviewId } = req.params;
+    await Campground.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
+    //$pull basically removes the specified thing
+    await Review.findByIdAndDelete(reviewId);
+    res.redirect(`/campgrounds/${id}`);
+  })
+);
+
 app.all("*", (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));
 });
