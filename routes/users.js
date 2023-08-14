@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const catchAsync = require("../utils/catchAsync");
 const passport = require("passport");
-const { storeReturnTo } = require("../middleware");
+const { createReturnTo, storeReturnTo } = require("../middleware");
 const users = require("../controllers/users");
 
 router
@@ -12,7 +12,7 @@ router
 
 router
   .route("/login")
-  .get(users.renderLogin)
+  .get(createReturnTo, users.renderLogin)
   .post(
     storeReturnTo,
     passport.authenticate("local", {
