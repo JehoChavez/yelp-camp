@@ -1,5 +1,13 @@
 body {
   height: 100vh;
+}
+
+.flash-container {
+  top: 10%;
+}
+
+#body-div {
+  height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("https://images.unsplash.com/photo-1573108036319-ec6b160d842c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
   background-size: cover;
