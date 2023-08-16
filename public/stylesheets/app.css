@@ -22,3 +22,16 @@
   width: 100%;
   object-fit: cover;
 }
+
+.show-image-container {
+  width: 100%;
+  position: relative;
+}
+
+.show-image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1; /* Establishes a 1:1 aspect ratio */
+  object-fit: cover; /* Crop image while maintaining aspect ratio */
+}
