@@ -12,7 +12,7 @@ router
 
 router
   .route("/login")
-  .get(createReturnTo, users.renderLogin)
+  .get(users.renderLogin)
   .post(
     storeReturnTo,
     passport.authenticate("local", {

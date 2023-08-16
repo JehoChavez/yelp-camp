@@ -13,9 +13,7 @@ module.exports.isLoggedIn = (req, res, next) => {
 };
 
 module.exports.createReturnTo = (req, res, next) => {
-  if (!req.session.returnTo) {
-    req.session.returnTo = req.header("Referer");
-  }
+  req.session.returnTo = req.originalUrl;
   next();
 };
 
